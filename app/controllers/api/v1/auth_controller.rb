@@ -11,13 +11,10 @@ class Api::V1::AuthController < ApplicationController
 
     def autologin
         user = User.find_by(id: request.headers["Authorization"])
-        # byebug
 
         if user 
-            # byebug
             render json: user  
         else
-            # byebug
             render json: {errors: "Please log back in"}      
         end
     end 

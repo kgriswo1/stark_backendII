@@ -4,6 +4,12 @@ class Api::V1::UsersController < ApplicationController
         render json: user
     end
 
+    def update
+        user = User.find_by(id: params[:id])
+        user.update(user_params)
+        render json: user
+    end
+
     def create
         user = User.new(user_params)
 
@@ -16,6 +22,6 @@ class Api::V1::UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :username, :password, :phone_number, :birthday, :profile_picture)
+        params.require(:user).permit(:first_name, :last_name, :username, :password, :phone_number, :birthday, :profile_picture, :money)
     end
 end

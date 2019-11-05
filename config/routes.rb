@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users
       resources :stocks
-      resources :watchlists, only: [:create]
+      resources :watchlists, only: [:create, :destroy]
 
       post '/signup', to: 'users#create'
       post '/signin', to: 'auth#signin'
