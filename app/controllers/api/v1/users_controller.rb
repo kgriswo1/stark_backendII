@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
 
     def update
         user = User.find_by(id: params[:id])
-        user.update(user_params)
+        user.update_attributes!(money: params[:money])
         render json: user
     end
 

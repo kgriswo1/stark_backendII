@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_143936) do
+ActiveRecord::Schema.define(version: 2019_11_07_152741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_143936) do
     t.string "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "sold"
-    t.boolean "bought"
+    t.integer "sold"
     t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 
